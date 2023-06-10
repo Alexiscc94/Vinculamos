@@ -1,0 +1,197 @@
+[{
+		"id": "",
+		"nombre": "",
+		"fecha_inicio": "",
+		"fecha_fin": "",
+		"responsable": "",
+		"responsable_cargo": "",
+		"formato_implementacion": "",
+		"objetivo": "",
+		"descripcion": "",
+		"estado": "",
+		"estado_ejecucion": "",
+		"estado_completitud": "",
+		"institucion": "demo3",
+		"mecanismo_nombre": "",
+		"frecuencia_nombre": "",
+		"unidades": [{
+				"id": "",
+				"nombre": ""
+			}
+		],
+		"unidades_sub": [{
+				"id": "",
+				"nombre": ""
+			}
+		],
+		"sedes": [{
+				"id": "",
+				"nombre": ""
+			}
+		],
+		"areas": [{
+				"id": "",
+				"nombre": ""
+			}
+		],
+		"carreras": [{
+				"id": "",
+				"nombre": ""
+			}
+		],
+		"ambitos": [{
+			"id": "",
+			"nombre": ""
+		}],
+		"ambitos_secundarios": [{
+			"id": "",
+			"nombre": ""
+		}],
+		"convenios": [{
+				"id": "",
+				"nombre": ""
+			}
+		],
+		"entornos": [{
+			"id": "",
+			"nombre": "",
+			"sub_entornos": [{
+				"id": "",
+				"nombre": "",
+				"participantes": [{
+					"tag": ""
+				}]
+			}]
+		}],
+		"impactos_internos": [{
+				"id": "",
+				"nombre": ""
+			}
+		],
+		"impactos_externos": [{
+				"id": "",
+				"nombre": ""
+			}
+		],
+		"resultados_esperados": [{
+			"id": "",
+			"tipo": "",
+			"cantidad": "",
+			"resultado": ""
+		}],
+		"impactos_esperados": [{
+			"id": "",
+			"tipo": "",
+			"cantidad": "",
+			"impacto": ""
+		}],
+		"paises": [{
+			"id": "",
+			"nombre": ""
+		}],
+		"regiones": [{
+			"id": "",
+			"nombre": ""
+		}],
+		"comunas": [{
+				"id": "",
+				"id_region": "",
+				"nombre": ""
+			}
+		],
+		"participantes": [{
+			"id": "",
+			"tipo": "",
+			"tipo2": "",
+			"id_iniciativa": "",
+			"publico_general": "",
+			"aplica_sexo": "",
+			"sexo_masculino": "",
+			"sexo_femenino": "",
+			"sexo_otro": "",
+			"aplica_edad": "",
+			"edad_ninos": "",
+			"edad_jovenes": "",
+			"edad_adultos": "",
+			"edad_adultos_mayores": "",
+			"aplica_procedencia": "",
+			"procedencia_rural": "",
+			"procedencia_urbano": "",
+			"aplica_vulnerabilidad": "",
+			"vulnerabilidad_pueblo": "",
+			"vulnerabilidad_discapacidad": "",
+			"vulnerabilidad_pobreza": "",
+			"aplica_nacionalidad": "",
+			"nacionalidad_chileno": "",
+			"nacionalidad_migrante": "",
+			"nacionalidad_pueblo": "",
+			"aplica_etnia": "",
+			"etnia_mapuche": "",
+			"etnia_otro": ""
+		}],
+		"recursos_infraestructuras": [{
+				"id": "",
+				"fuente": "",
+				"tipo": "",
+				"cantidad": "",
+				"valorizacion": ""
+			}
+		],
+		"recursos_humanos": [{
+				"id": "",
+				"fuente": "",
+				"tipo": "",
+				"cantidad": "",
+				"valorizacion": ""
+			}
+		],
+		"recursos_dinero": [{
+				"id": "",
+				"fuente": "",
+				"tipo": "",
+				"valorizacion": ""
+			}
+		],
+		"invi": {
+			"mecanismo": {
+				"etiqueta": "",
+				"valor": ""
+			},
+			"cobertura_territorialidad": {
+				"etiqueta": "",
+				"valor": ""
+			},
+			"cobertura_pertinencia": {
+				"etiqueta": "",
+				"valor": ""
+			},
+			"cobertura_cantidad": {
+				"etiqueta": "",
+				"valor": ""
+			},
+			"frecuencia": {
+				"etiqueta": "",
+				"valor": ""
+			},
+			"evaluacionInterna": {
+				"valor": "",
+				"etiqueta": ""
+			},
+			"evaluacionExterna": {
+				"valor": "",
+				"etiqueta": ""
+			},
+			"evaluacion": {
+				"valor": "",
+				"etiqueta": ""
+			},
+			"invi": {
+				"total": ""
+			}
+		},
+		"ods": [{
+			"id": "2",
+			"nombre": ""
+		}]
+	}
+]
