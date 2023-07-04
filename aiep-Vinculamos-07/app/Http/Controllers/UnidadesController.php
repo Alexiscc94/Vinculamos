@@ -14,6 +14,7 @@ use App\Models\IniciativaPlanUnidad;
 
 class ParametrosController extends Controller
 {
+    // TODO: Guardado
     public function GuardarUnidad(Request $request)
     {
         $request->validate(
@@ -46,6 +47,7 @@ class ParametrosController extends Controller
         return redirect()->route('admin.listar.usuario')->with('exitoUnidad', 'Unidad ingresada correctamente.'); // cambio de ruta
     }
 
+    // TODO: Actuaizar
     public function ActualizarUnidad(Request $request)
     {
         $unidadUpdate = Unidades::where(['id' => $request->id])
@@ -63,6 +65,7 @@ class ParametrosController extends Controller
         return redirect()->route('admin.listar.usuario')->with('exitoUnidad', 'Unidad actualizada correctamente.'); // cambio de ruta
     }
 
+    // TODO: Eliminar
     public function EliminarUnidad(Request $request)
     {
         $unidadUpdate = Unidades::where(['id' => $request->id])->update(['visible' => -1]);
@@ -77,6 +80,7 @@ class ParametrosController extends Controller
         return redirect()->route('admin.listar.usuario')->with('exitoUnidad', 'Unidad eliminada correctamente.'); // cambio de ruta
     }
 
+    // TODO: Buscar 
     public function BuscarUnidad()
     {
         return view('auth.ingresar', [ // Cambiar ruta
@@ -84,6 +88,7 @@ class ParametrosController extends Controller
         ]);
     }
 
+    // TODO: Buscar por ID
     public function BuscarUnidadID(Request $request)
     {
         return view('auth.ingresar', [ // Cambiar ruta
@@ -91,6 +96,7 @@ class ParametrosController extends Controller
         ]);
     }
 
+    // TODO: Buscar por Institucion
     public function BuscarUnidadInstitu(Request $request)
     {
         return view('auth.ingresar', [ // Cambiar ruta
@@ -98,6 +104,7 @@ class ParametrosController extends Controller
         ]);
     }
 
+    // TODO: Buscar por ID e Institucion
     public function BuscarUnidadIDInstitu(Request $request)
     {
         return view('auth.ingresar', [ // Cambiar ruta
@@ -105,6 +112,7 @@ class ParametrosController extends Controller
         ]);
     }
 
+    // TODO: Buscar por Iniciativa Plan
     public function BuscarUnidadIniciativaPlan(Request $request)
     {
         return view('auth.ingresar', [ // Cambiar ruta
@@ -112,17 +120,20 @@ class ParametrosController extends Controller
                             ->join('viga_iniciativas_plan_unidad','viga_iniciativas_plan_unidad.id_unidad','=','viga_unidades.id')
                             ->select('viga_unidades.id','viga_unidades.nombre')
                             ->where('viga_iniciativas_plan_unidad.id_iniciativa',$request->iniciativa)
-                            ->distinct()
+                            ->distinct() 
                             ->get()
         ]);
     }
 
+    // TODO: Contar Unidad por Institucion 
     public function ContarUnidadInstitucion(Request $request)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Conteo' => Unidades::count('id')->where(['visible'=>1,'institucion'=>$request->institucion])
         ]);
     }
+
+    // TODO: Contar Unidad por Institucion x Grupo
     public function ContarUnidadInstitucionxGrupo(Request $request)
     {
         return view('auth.ingresar', [
@@ -137,6 +148,7 @@ class ParametrosController extends Controller
         ]);
     }
 
+    // TODO: Actualizar Unidad x Iniciativa Plan
     //////////////////////////////////////////////////////////////////////////////////      
     //                      DUDA, nose si esté vien el update                       //
     //////////////////////////////////////////////////////////////////////////////////
@@ -157,7 +169,7 @@ class ParametrosController extends Controller
         return redirect()->route('admin.listar.usuario')->with('exitoUnidad', 'Unidad actualizada correctamente.'); 
     }
 
-
+    // TODO: Buscar Unidad x Iniciativa Real
     //////////////////////////////////////////////////////////////////////////////////      
     //                      DUDA, nose si esté vien el update                       //
     //                      INICIATIVA "REAL", nu hay datos :c                      //
@@ -174,6 +186,7 @@ class ParametrosController extends Controller
         ]);
     }
 
+    // TODO: Actualizar Unidad x Iniciativa Real
     public function ActualizarUnidadxIniciativaReal(Request $request)
     {
         $unidadUpdate = IniciativasRealUnidad::where(['id_iniciativa' => $request->iniciativa])

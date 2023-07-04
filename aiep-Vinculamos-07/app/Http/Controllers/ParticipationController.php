@@ -21,16 +21,21 @@ class ParticipacionController extends Controller
     //                                                                         //
     /////////////////////////////////////////////////////////////////////////////
 
+    // TODO: Buscar Participacion Tag
     public function ListarParticipacionTag() {
         return view('auth.ingresar', [
             'ParticipacionTag' => ParticipacionPlanTag::select('id','id_iniciativa','id_participacion','detalle')->where('visible', 1)->orderBy('id', 'asc')->get()
         ]);
     }
+
+    // TODO: Buscar Participacion Tag x Participacion
     public function ListarParticipacionTagxParticipacion(Request $request) {
         return view('auth.ingresar', [
             'ParticipacionTag' => ParticipacionPlanTag::select('id','id_iniciativa','id_participacion','detalle')->where('id_participacion', $request)->orderBy('id', 'asc')->get()
         ]);
     }
+
+    // TODO: Actualizar Participacion Tag
     public function ActualizarParticipacionTag(Request $request) {
 
         $tagUpdate = ParticipacionPlanTag::where(['id_iniciativa' => $request->idiniciativa,"id_participacion" => $request->idParticipation])
@@ -51,6 +56,7 @@ class ParticipacionController extends Controller
     //                                                                         //
     /////////////////////////////////////////////////////////////////////////////
 
+    // TODO: Guardar Participacion Plan
     public function GuardarParticipacionPlan(Request $request)
     {
         $request->validate(
@@ -132,6 +138,7 @@ class ParticipacionController extends Controller
         return redirect()->route('admin.listar.usuario')->with('exitoParticipacion', 'Participacion ingresada correctamente.');
     }
 
+    // TODO: Eliminar Participacion Plan
     public function EliminarParticipacionPlan(Request $request)
     {
         $partiVerificar = ParticipacionPlan::where(['id' => $request->id, 'id_iniciativa' => $request->id_iniciativa])->first();
@@ -151,48 +158,63 @@ class ParticipacionController extends Controller
         return redirect()->route('admin.listar.usuario')->with('exitoParticipio', 'La participación planeada fue eliminada correctamente.');// Cambiar ruta
     }
 
+    // TODO: Buscar Participacion Plan x Iniciativa
     public function BuscarParticipacionPlanxIniciativa(Request $request)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'ParticipacionPlaneada' => ParticipacionPlan::where(['visible' => 1 , 'id_iniciativa' => $request->id_iniciativa])->orderBy('id', 'asc')->get()
         ]);
     }
+
+    // TODO: Sumar Participacion Plan x Iniciativa
     public function SumarParticipacionPlanxIniciativa(Request $request, $columna)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionPlan::sum([$columna])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa])
         ]);
     }
+
+    // TODO: Sumar Participacion Plan x Iniciativa y Tipo
     public function SumarParticipacionPlanxIniciativaTipo(Request $request, $columna, $tipo)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionPlan::sum([$columna])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa,"tipo" => $tipo])
         ]);
     }
+
+    // TODO: Sumar Publico General Participacion Plan x Iniciativa
     public function SumarPGeneralParticipacionPlanxIniciativa(Request $request)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionPlan::sum(["publico_general"])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa])
         ]);
     }
+
+    // TODO: Sumar Publico General Participacion Plan x Iniciativa y Tipo2
     public function SumarPGeneralParticipacionPlanxIniciativaTipo2(Request $request)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionPlan::sum(["publico_general"])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa,"tipo2" => $request->type2])
         ]);
     }
+
+    // TODO: Sumar Participacion Plan x Iniciativa y Genero
     public function SumarParticipacionPlanxIniciativaGenero(Request $request,$columna)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionPlan::sum([$columna])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa,"aplica_sexo" => "on"])
         ]);
     }
+
+    // TODO: Sumar Participacion Plan x Iniciativa y Edad
     public function SumarParticipacionPlanxIniciativaEdad(Request $request,$columna)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionPlan::sum([$columna])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa,"aplica_edad" => "on"])
         ]);
     }
+
+    // TODO: Sumar Participacion Plan x Iniciativa y Procedencia
     public function SumarParticipacionPlanxIniciativaProcedencia(Request $request,$columna)
     {
         return view('auth.ingresar', [ // Cambiar ruta
@@ -206,6 +228,7 @@ class ParticipacionController extends Controller
     //                                                                         //
     /////////////////////////////////////////////////////////////////////////////
 
+    // TODO: Guardar Participacion Real
     public function GuardarParticipacionReal(Request $request)
     {
         $request->validate(
@@ -287,6 +310,7 @@ class ParticipacionController extends Controller
         return redirect()->route('admin.listar.usuario')->with('exitoParticipacion', 'Participacion ingresada correctamente.');
     }
 
+    // TODO: Eliminar Participacion Real
     public function EliminarParticipacionReal(Request $request)
     {
         $partiVerificar = ParticipacionReal::where(['id' => $request->id, 'id_iniciativa' => $request->id_iniciativa])->first();
@@ -306,48 +330,63 @@ class ParticipacionController extends Controller
         return redirect()->route('admin.listar.usuario')->with('exitoParticipio', 'La participación real fue eliminada correctamente.');// Cambiar ruta
     }
 
+    // TODO: Buscar Participacion Real x Iniciativa
     public function BuscarParticipacionRealxIniciativa(Request $request)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'ParticipacionReal' => ParticipacionReal::where(['visible' => 1 , 'id_iniciativa' => $request->id_iniciativa])->orderBy('id', 'asc')->get()
         ]);
     }
+
+    // TODO: Sumar Participacion Real x Iniciativa
     public function SumarParticipacionRealxIniciativa(Request $request, $columna)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionReal::sum([$columna])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa])
         ]);
     }
+
+    // TODO: Sumar Participacion Real x Iniciativa y Tipo
     public function SumarParticipacionRealxIniciativaTipo(Request $request, $columna, $tipo)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionReal::sum([$columna])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa,"tipo" => $tipo])
         ]);
     }
+
+    // TODO: Sumar Publico General Participacion Real x Iniciativa 
     public function SumarPGeneralParticipacionRealxIniciativa(Request $request)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionReal::sum(["publico_general"])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa])
         ]);
     }
+
+    // TODO: Sumar Publico General Participacion Real x Iniciativa y Tipo2
     public function SumarPGeneralParticipacionRealxIniciativaTipo2(Request $request)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionReal::sum(["publico_general"])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa,"tipo2" => $request->type2])
         ]);
     }
+
+    // TODO: Sumar Participacion Real x Iniciativa y Genero
     public function SumarParticipacionRealxIniciativaGenero(Request $request,$columna)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionReal::sum([$columna])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa,"aplica_sexo" => "on"])
         ]);
     }
+
+    // TODO: Sumar Participacion Real x Iniciativa y Edad
     public function SumarParticipacionPRealxIniciativaEdad(Request $request,$columna)
     {
         return view('auth.ingresar', [ // Cambiar ruta
             'Total' => ParticipacionReal::sum([$columna])->where(['visible' => 1, 'id_iniciativa' => $request->id_iniciativa,"aplica_edad" => "on"])
         ]);
     }
+
+    // TODO: Sumar Participacion Real x Iniciativa y Procedencia
     public function SumarParticipacionRealxIniciativaProcedencia(Request $request,$columna)
     {
         return view('auth.ingresar', [ // Cambiar ruta

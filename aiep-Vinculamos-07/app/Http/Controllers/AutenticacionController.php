@@ -15,16 +15,19 @@ use App\Models\Unidades;
 
 class AutenticacionController extends Controller
 {
+    // TODO: Retorno a Login
     public function ingresar() {
         return view('auth.ingresar');
     }
 
+    // TODO: Redireccion a registrar un nuevo Usuario
     public function registrar() {
         // $roles = DB::table('roles_usuarios')->select('rous_codigo','rous_nombre')->limit(3)->orderBy('rous_codigo')->get();
         // $unidades = Unidades::all();
         return view('auth.registrar');
     }
 
+    // TODO: Validar Ingreso
     public function validarIngreso(Request $request) {
         $request->validate(
             [
@@ -50,9 +53,10 @@ class AutenticacionController extends Controller
         if (!$validarClave) return redirect()->back()->with('errorClave', 'La contraseña es incorrecta.')->withInput();
         $request->session()->put('admin', $usuario);
 
-        return redirect()->route('admin.index.iniciativas');
+        return redirect()->route('home.index');
     }
 
+    // TODO: Cerrar Sesion
     public function cerrarSesion() {
         if (Session::has('admin')) {
             Session::forget('admin');
@@ -61,6 +65,7 @@ class AutenticacionController extends Controller
         return redirect()->back();
     }
 
+    // TODO: Guardar Registro
     public function guardarRegistro(Request $request)
     {
         $request->validate(
