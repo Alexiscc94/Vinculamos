@@ -84,7 +84,7 @@
                                 @elseif (Session::has('observador'))
                                     <a href="{{ route('observador.perfil.show', ['usua_rut' => Session::get('observador.usua_rut'), 'rous_codigo' => Session::get('observador.rous_codigo')]) }}" class="dropdown-item has-icon"><i class="far fa-user"></i> Perfil</a>
                                 @endif
-                                
+
                                 <a href="{{ route('auth.cerrar') }}" class="dropdown-item has-icon text-danger"><i class="fas fa-sign-out-alt"></i>
                                     Cerrar sesión
                                 </a>
@@ -92,7 +92,7 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="main-sidebar sidebar-style-2">
+                <div class="main-sidebar sidebar-style-2" color="black">
                     <aside id="sidebar-wrapper">
                         <div class="sidebar-brand">
                             <a href="javascript:void(0)"> <img alt="image" src="{{ asset('public/img/camanchaca.png') }}" class="header-logo" />
@@ -111,7 +111,7 @@
                         <div class="main-content">
                             @yield('contenido')
                         </div>
-
+                    </div>
 
 
                 </div>
